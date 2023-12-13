@@ -183,10 +183,10 @@ class _HomeScreenState extends State<HomeScreen> {
               else {
                 result.add(DestinationButton(
                   vehicleID: vehicleID,
-                  dropoffAddress:   historyViewmodel.historyList[i]["destination_location"],
+                  dropoffAddress:   historyViewmodel.historyList[i]["destination_address"],
                   dropoffLatitude:  historyViewmodel.historyList[i]["destination_location"]["lat"],
                   dropoffLongitude: historyViewmodel.historyList[i]["destination_location"]["long"],
-                  time: readDateTime(historyViewmodel.historyList[i]["booking_time"]),
+                  time: readDateTime(historyViewmodel.historyList[i]["createdAt"]),
                   accountViewmodel: widget.accountViewmodel,
                   duringTrip: duringTrip,
                   saveDuringTrip: (bool value) async => saveDuringTrip(value)

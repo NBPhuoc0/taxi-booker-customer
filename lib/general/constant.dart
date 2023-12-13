@@ -26,7 +26,7 @@ class Customer {
   static const String setDriverRate = "$headPoint/users/rateDriver";
   static const String getDriverRate = "$headPoint/users/driverRate";
   static const String getDriverLocation = "$headPoint/users/getDriverLocationByBR";
-  static const String cancelRequest = "$headPoint/users/cancelRequest";
+  static const String cancelRequest = "$headPoint/users/cancelOrder";
 }
 
 

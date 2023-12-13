@@ -92,7 +92,7 @@ class TripBox extends StatelessWidget {
       borderRadius: const BorderRadius.all(Radius.circular(15)),
       child: Container(
 
-        height: 150,
+        height: 200,
         color: Colors.amber.shade200,
         child: Stack(clipBehavior: Clip.antiAliasWithSaveLayer, children: [
 

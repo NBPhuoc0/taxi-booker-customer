@@ -157,8 +157,7 @@ class MapAPIViewmodel with ChangeNotifier {
           "Authorization": "Bearer "+ token
         },
         body: json.encode({
-          "booking_time": mapAPI.bookingTime.toString(),
-          "car_type": vehicleID,
+          "vehicle_type": vehicleID,
 
           "source_address":    mapAPI.pickupAddr,
           "destination_address":   mapAPI.dropoffAddr,
@@ -171,7 +170,7 @@ class MapAPIViewmodel with ChangeNotifier {
             "lng": mapAPI.dropoffLatLng.longitude
           },
 
-          "orderTotal":    mapAPI.price,
+          "orderTotal":   mapAPI.price,
           "distance": mapAPI.distance,
           "duration": mapAPI.duration
         })
@@ -180,8 +179,8 @@ class MapAPIViewmodel with ChangeNotifier {
 
     if (result["status"]) {
       mapAPI.tripId = result["body"]["_id"];
-      mapAPI.driverId = result["body"]["driver_id"];
-      mapAPI.driverPhonenumber = result["body"]["phone"];
+      // mapAPI.driverId = result["body"]["driver_id"];
+      // mapAPI.driverPhonenumber = result["body"]["phone"];
     }
     notifyListeners();
   }

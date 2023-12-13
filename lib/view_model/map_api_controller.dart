@@ -185,6 +185,13 @@ class MapAPIController with ChangeNotifier {
 
 
   Future<void> postBookingRequest(String customerPhonenumber, int vehicleID) async {
+    var vehicle = "BIKE";
+    if ( vehicleID <= 1){
+      vehicle = "BIKE";
+    }
+    else if (vehicleID >= 2){
+      vehicle = "CAR";
+    }
     final result = await MapAPIReader().toggleFunction((String token) async {
       print(token);
       return http.post(
@@ -195,8 +202,7 @@ class MapAPIController with ChangeNotifier {
         },
         body: json.encode({
 
-          "booking_time": mapAPI.bookingTime.toString(),
-          "car_type": vehicleID,
+          "vehicle_type": vehicle,
 
           "source_address":    mapAPI.pickupAddr,
           "destination_address":   mapAPI.dropoffAddr,

@@ -146,14 +146,15 @@ class _AfterSearchBoxState extends State<AfterSearchBox> {
                 label: currTimeStr,
                 width: 170,
                 bold: true,
-                color: widget.accountViewmodel.account.map["is_Vip"] ? Colors.amber.shade700 : Colors.brown.shade700,
+                color:  Colors.amber.shade700,
                 onPressed: () async {
-                  if (widget.accountViewmodel.account.map["is_Vip"]) {
-                    await pickTime();
-                  }
-                  else {
-                    warningModal(context, "Bạn hãy đặt thêm nhiều cuốc nữa để mở khoá tính năng này.");
-                  }
+                  await pickTime();
+                  // if (widget.accountViewmodel.account.map["is_Vip"]) {
+                  //   await pickTime();
+                  // }
+                  // else {
+                  //   warningModal(context, "Bạn hãy đặt thêm nhiều cuốc nữa để mở khoá tính năng này.");
+                  // }
                 }
               )
 
