@@ -148,7 +148,14 @@ class MapAPIViewmodel with ChangeNotifier {
 
 
 
-  Future<void> postBookingRequest(String customerPhonenumber, int vehicleID) async {
+  Future<bool> postBookingRequest(String customerPhonenumber, int vehicleID) async {
+    var vehicle = "BIKE";
+    if ( vehicleID <= 1){
+      vehicle = "BIKE";
+    }
+    else if (vehicleID >= 2){
+      vehicle = "CAR";
+    }
     final result = await MapAPIReader().toggleFunction((String token) async {
       return http.post(
         Uri.parse(Customer.sendBookingRequest),
@@ -157,7 +164,7 @@ class MapAPIViewmodel with ChangeNotifier {
           "Authorization": "Bearer "+ token
         },
         body: json.encode({
-          "vehicle_type": vehicleID,
+          "vehicle_type": vehicle,
 
           "source_address":    mapAPI.pickupAddr,
           "destination_address":   mapAPI.dropoffAddr,
@@ -177,12 +184,13 @@ class MapAPIViewmodel with ChangeNotifier {
       );
     }, "Update booking request");
 
-    if (result["status"]) {
-      mapAPI.tripId = result["body"]["_id"];
-      // mapAPI.driverId = result["body"]["driver_id"];
-      // mapAPI.driverPhonenumber = result["body"]["phone"];
-    }
     notifyListeners();
+    if (result["status"] ) {
+      developer.log(result["body"]["_id"]);
+      mapAPI.tripId = result["body"]["_id"];  
+      return Future.value(true);
+    }
+    return Future.value(false);
   }
 
   Future<bool> cancelBookingRequest() async {
@@ -199,7 +207,7 @@ class MapAPIViewmodel with ChangeNotifier {
 
     if (result["status"]) {
       print(result["body"]);
-      if (result["body"].containsKey("isSuccessful") && result["body"]["isSuccessful"]) {
+      if (result["body"]["orderStatus"] == "CANCEL") {
         return Future.value(true);
       }
       else {

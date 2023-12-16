@@ -13,8 +13,12 @@ class Auth {
 //   // static const String port = "3003";
 //   static const String setLatLong = "$headPoint/setLatLong";
 //   static const String userInfo = "$headPoint/userInfor";
+//   static const String getHistory = "$headPoint/getHistory";
 //   static const String nearbyBookingRequest = "$headPoint/getNearbyBookingRequest";
 //   static const String sendBookingAccept = "$headPoint/sendBookingAccept";
+//   static const String sendSMS = "$headPoint/sendSMS";
+//   static const String sendNotification = "$headPoint/sendNotification";
+//   static const String setCompleted = "$headPoint/setCompleted";
 // }
 
 class Customer {

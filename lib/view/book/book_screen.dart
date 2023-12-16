@@ -244,8 +244,13 @@ class _BookScreenState extends State<BookScreen> {
                       await saveBookState(BookState.scheduleTaxiArrival);
                     }
                     else {
-                      if (context.mounted) await context.read<MapAPIViewmodel>().postBookingRequest(widget.accountViewmodel.account.map["phone"], vehicleID);
-                      await saveBookState(BookState.beforeTaxiArrival);
+                      if (context.mounted) {
+                        if (await context.read<MapAPIViewmodel>().postBookingRequest(widget.accountViewmodel.account.map["phone"], vehicleID)){
+                          await saveBookState(BookState.beforeTaxiArrival);
+                          developer.log("đã đặt");
+                          // await saveBookState(BookState.beforeSearch);
+                        }
+                      }
                     }
                     if (context.mounted) await context.read<MapAPIViewmodel>().saveCustomer();
                     await widget.saveDuringTrip(true);

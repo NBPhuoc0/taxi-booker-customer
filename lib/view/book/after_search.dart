@@ -139,7 +139,7 @@ class _AfterSearchBoxState extends State<AfterSearchBox> {
                 width: 170,
                 bold: true,
                 color: Colors.amber.shade700,
-                onPressed: () async => widget.onPressOK(selectingDate)
+                onPressed: () async => widget.onPressOK(false)
               ),
 
               BigButton(
@@ -148,7 +148,7 @@ class _AfterSearchBoxState extends State<AfterSearchBox> {
                 bold: true,
                 color:  Colors.amber.shade700,
                 onPressed: () async {
-                  await pickTime();
+                  // await pickTime();
                   // if (widget.accountViewmodel.account.map["is_Vip"]) {
                   //   await pickTime();
                   // }
