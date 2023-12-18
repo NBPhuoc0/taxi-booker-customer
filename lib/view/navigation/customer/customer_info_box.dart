@@ -75,7 +75,7 @@ class _CustomerInfosState extends State<CustomerInfos> {
         ),
 
         Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          Expanded(child: PriceButton(text:"${writeMapValue("price", false)} VNĐ")),
+          Expanded(child: PriceButton(text:"${writeMapValue("orderTotal", false)} VNĐ")),
           Expanded(child: PriceButton(text: distanceToString(writeMapValue("distance", false) ?? 0))),
           Expanded(child: PriceButton(text: durationToString(writeMapValue("duration", false) ?? 0)))
         ]),
