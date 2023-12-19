@@ -132,35 +132,49 @@ class _AfterSearchBoxState extends State<AfterSearchBox> {
           SizedBox(
             width: MediaQuery.of(context).size.width,
             height: 60,
-            child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-
-              BigButton(
+            child:  BigButton(
                 label: "Đặt ngay!",
                 width: 170,
                 bold: true,
                 color: Colors.amber.shade700,
                 onPressed: () async => widget.onPressOK(false)
               ),
-
-              BigButton(
-                label: currTimeStr,
-                width: 170,
-                bold: true,
-                color:  Colors.amber.shade700,
-                onPressed: () async {
-                  // await pickTime();
-                  // if (widget.accountViewmodel.account.map["is_Vip"]) {
-                  //   await pickTime();
-                  // }
-                  // else {
-                  //   warningModal(context, "Bạn hãy đặt thêm nhiều cuốc nữa để mở khoá tính năng này.");
-                  // }
-                }
-              )
-
-            ])
-
           )
+
+          
+
+          // SizedBox(
+          //   width: MediaQuery.of(context).size.width,
+          //   height: 60,
+          //   child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+
+          //     BigButton(
+          //       label: "Đặt ngay!",
+          //       width: 170,
+          //       bold: true,
+          //       color: Colors.amber.shade700,
+          //       onPressed: () async => widget.onPressOK(false)
+          //     ),
+
+          //     // BigButton(
+          //     //   label: currTimeStr,
+          //     //   width: 170,
+          //     //   bold: true,
+          //     //   color:  Colors.amber.shade700,
+          //     //   onPressed: () async {
+          //     //     // await pickTime();
+          //     //     // if (widget.accountViewmodel.account.map["is_Vip"]) {
+          //     //     //   await pickTime();
+          //     //     // }
+          //     //     // else {
+          //     //     //   warningModal(context, "Bạn hãy đặt thêm nhiều cuốc nữa để mở khoá tính năng này.");
+          //     //     // }
+          //     //   }
+          //     // )
+
+          //   ])
+
+          // )
 
         ])
       ))

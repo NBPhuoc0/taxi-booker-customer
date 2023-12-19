@@ -92,7 +92,7 @@ class AccountReader {
   Future< Map<String, dynamic> > logOut() async {
 
     Map<String, dynamic> result = { "status": false, "body": null };
-    final response = await http.post(Uri.parse(Auth.logout), headers: {
+    final response = await http.get(Uri.parse(Auth.logout), headers: {
         "Content-Type": "application/json; charset=UTF-8",
         "Authorization": "Bearer "+ await TokenSaver().loadAccessToken()
       });

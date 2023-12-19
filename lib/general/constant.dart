@@ -3,7 +3,7 @@ const String headPoint = "https://gop-taxi.azurewebsites.net";  // Giả lập x
 
 class Auth {
   // static const String port = "3001";
-  static const String register = "$headPoint/auth/users/signup";
+  static const String register = "$headPoint/auth/user/signup";
   static const String login = "$headPoint/auth/user/signin";
   static const String logout = "$headPoint/auth/user/logout";
   static const String refresh = "$headPoint/auth/user/refresh";

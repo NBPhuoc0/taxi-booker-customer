@@ -117,7 +117,7 @@ class _BeforeTaxiTripState extends State<BeforeTaxiTrip> {
           const HorizontalLine(),
 
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            BigButton(width: 180, label: "Huỷ cước", onPressed: widget.onCancel, bold: true),
+            BigButton(width: 150, label: "Huỷ cước", onPressed: widget.onCancel, bold: true),
             InfoBox(
               height: 75,
               icon: Icon(Icons.cloud_circle, color: Colors.amber.shade500),
